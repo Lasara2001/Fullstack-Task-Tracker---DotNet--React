@@ -1,0 +1,159 @@
+/* Light Mode Variables */
+:root {
+  --bg-color: #f4f7f6;
+  --card-bg: #ffffff;
+  --text-color: #333333;
+  --border-color: #eee;
+  --input-bg: #ffffff;
+  --input-border: #ddd;
+  --task-bg: #fafafa;
+  --toggle-bg: #e9ecef;
+  --toggle-border: #ced4da;
+}
+
+/* Dark Mode Variables */
+[data-theme='dark'] {
+  --bg-color: #1a1a2e;
+  --card-bg: #16213e;
+  --text-color: #e9ecef;
+  --border-color: #0f3460;
+  --input-bg: #0f3460;
+  --input-border: #1f4068;
+  --task-bg: #1f4068;
+  --toggle-bg: #0f3460;
+  --toggle-border: #1f4068;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 450px;
+  transition: background 0.3s ease;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+/* Rounded Button එකේ Styles */
+.theme-toggle-btn {
+  background-color: var(--toggle-bg);
+  border: 1px solid var(--toggle-border);
+  color: var(--text-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 20px; /* රවුම් shape එක ලබාදීම */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.input-box {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 14px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s, background-color 0.3s;
+}
+
+.input-box:focus {
+  border-color: #007bff;
+}
+
+.add-btn {
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-btn:hover {
+  background-color: #0056b3;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: var(--task-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.delete-btn {
+  color: #ff4d4f;
+  background-color: #fff1f0;
+  border: 1px solid #ffccc7;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+[data-theme='dark'] .delete-btn {
+  background-color: #3c1e2e;
+  border-color: #5c2338;
+}
+
+.delete-btn:hover {
+  background-color: #ff4d4f;
+  color: white;
+}
